@@ -1,19 +1,29 @@
 {
-  "name": "sheets-robotevents",
+  "name": "robotevents-csv",
   "version": "1.0.0",
-  "main": "out/main.js",
   "license": "MIT",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -fr dist",
+    "dev": "tsc-watch --onSuccess \"yarn start\"",
+    "start": "node --enable-source-maps dist"
+  },
   "dependencies": {
-    "@koa/router": "^9.4.0",
-    "express": "^4.17.1",
-    "koa": "^2.13.0",
-    "robotevents": "^2.7.0"
+    "@robotevents/client": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@types/koa": "^2.11.6",
-    "@types/koa__router": "^8.0.3"
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.10",
+    "prettier": "^2.8.7",
+    "tsc-watch": "^6.0.0",
+    "typescript": "^5.0.2"
   },
-  "scripts": {
-    "dev": "tsc && node out/main.js"
-  }
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "yarn@3.5.0"
 }
